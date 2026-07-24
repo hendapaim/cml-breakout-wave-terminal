@@ -1,0 +1,5 @@
+# Legacy API compatibility only. The Wave/CML2 workflow uses config.yaml and
+# BREAKOUT_USERNAME / BREAKOUT_PASSWORD, so passwords are not stored on disk.
+cmlServer: https://cml2
+lab: ""
+username: admin
