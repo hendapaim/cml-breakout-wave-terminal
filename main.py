@@ -115,8 +115,7 @@ def write_launcher(
         "echo \"Opening CML2 consoles for: $LAB_TITLE\"",
     ]
     for label, port in nodes:
-        command = " ".join([shlex.quote(str(path)), "--connect", shlex.quote(str(port))])
-        lines.append(f"wsh run -c {shlex.quote(command)}")
+        lines.append(f'wsh run -c "\\\"$SCRIPT_DIR/wave-cml2\\\" --connect {port}"')
         lines.append(f"echo {shlex.quote(f'  {label}: {host}:{port}')}")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     path.chmod(path.stat().st_mode | stat.S_IXUSR | stat.S_IXGRP)

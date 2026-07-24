@@ -46,11 +46,11 @@ if ! proxy_ready "$FIRST_PORT"; then
   proxy_ready "$FIRST_PORT" || { echo 'breakout did not start; check its Wave block and CML2 credentials.' >&2; exit 1; }
 fi
 echo "Opening CML2 consoles for: $LAB_TITLE"
-wsh run -c '/home/henda/CML-lab/tools/v1/wave-cml2 --connect 9000'
+wsh run -c "\"$SCRIPT_DIR/wave-cml2\" --connect 9000"
 echo '  65001: ::1:9000'
-wsh run -c '/home/henda/CML-lab/tools/v1/wave-cml2 --connect 9001'
+wsh run -c "\"$SCRIPT_DIR/wave-cml2\" --connect 9001"
 echo '  65100: ::1:9001'
-wsh run -c '/home/henda/CML-lab/tools/v1/wave-cml2 --connect 9002'
+wsh run -c "\"$SCRIPT_DIR/wave-cml2\" --connect 9002"
 echo '  65200: ::1:9002'
-wsh run -c '/home/henda/CML-lab/tools/v1/wave-cml2 --connect 9003'
+wsh run -c "\"$SCRIPT_DIR/wave-cml2\" --connect 9003"
 echo '  65300: ::1:9003'
